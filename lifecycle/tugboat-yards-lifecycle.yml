@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: searched
+source: https://web.archive.org/web/20150524033941id_/https://tugboatyards.com/developer/api/sources/checkouts.txt
+x-status: historical
+note: Tugboat Yards is defunct. Lifecycle facts recovered from the provider's
+  archived 2015 developer documentation and from Wayback Machine domain
+  history probed 2026-07-21. No status page, SLA, versioning, or deprecation
+  policy was ever published.
+company_status:
+  status: defunct
+  evidence:
+  - tugboatyards.com live product site archived 2012-12-14 through ~2014
+  - domain reduced to a Hover registrar parking page by 2016-06-14 (Wayback)
+  - domain publishes no A/AAAA records as of 2026-07-21 (does not resolve)
+versioning:
+  scheme: none-documented
+  notes: Single unversioned endpoint at https://api.tugboatyards.com.
+deprecation:
+  policy_url: null
+  sunset_header: false
+deprecated_operations:
+- operation: GET /checkout/{checkout_id}
+  status: documented as DEPRECATED in the 2015 docs
+  replacement: the order interface (GET /order/{order_id}), which covered all
+    payment providers rather than only WePay
+sla: null
+status_page: null

@@ -1,0 +1,42 @@
+generated: '2026-07-21'
+method: searched
+source: https://web.archive.org/web/20150524033942id_/https://tugboatyards.com/developer/api/sources/index.txt
+x-status: historical
+note: Tugboat Yards is defunct. Cross-cutting API conventions recovered from
+  the provider's archived 2015 developer documentation. No idempotency
+  contract, pagination, field expansion, versioning, or rate-limit signaling
+  was ever documented.
+endpoint: https://api.tugboatyards.com
+transport:
+  tls_required: true
+  note: All requests had to be SSL encrypted.
+authentication:
+  style: api-key-header
+  header: X-Tugboat-Auth
+  see: authentication/tugboat-yards-authentication.yml
+encoding:
+  request: UTF-8; POST parameter values urlencoded; binary data base64-encoded
+    in POST bodies
+  response: UTF-8 JSON
+dates:
+  timezone: UTC
+  formats:
+  - YYYY-MM-DD (date-only)
+  - YYYY-MM-DD HH:MM:SS (date and time)
+idempotency: none-documented
+pagination: none-documented
+field_expansion: none-documented
+request_tracing: none-documented
+versioning: none-documented
+rate_limits: none-documented
+error_envelope:
+  field: error
+  see: errors/tugboat-yards-problem-types.yml
+filtering:
+  style: query-parameter status filters
+  examples:
+  - GET /offers?status=deleted
+  - GET /orders?status=refunded
+  - GET /offer/{offer_id}/subscribers?status=expired
+webhooks:
+  see: asyncapi/tugboat-yards-webhooks.yml

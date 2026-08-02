@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: searched
+source: https://pytugboat.readthedocs.io/
+x-status: historical
+note: Tugboat Yards is defunct. Its one first-party client library, pytugboat
+  (Python), survives only as documentation on Read the Docs (still live,
+  copyright 2013 Tugboat Yards Inc.). It was never published to PyPI
+  (pypi.org/pypi/pytugboat returns 404, checked 2026-07-21) and its source
+  repo github.com/tugboat-yards/pytugboat has been deleted (404). npm, PyPI,
+  Maven Central, NuGet, RubyGems, and crates.io hold no Tugboat Yards
+  packages.
+packages:
+- language: python
+  registry: none
+  name: pytugboat
+  version: '0.1'
+  url: https://pytugboat.readthedocs.io/
+  source_repo: https://github.com/tugboat-yards/pytugboat (deleted, 404 as of 2026-07-21)
+  install: unavailable - never published to PyPI and source repository deleted
+  official: true
+  status: defunct
+  description: First-party Python client for the Tugboat Yards API ("from
+    tugboatyards import Tugboat"), wrapping key-check, page, offer, subscriber,
+    and order methods with an X-Tugboat-Auth token.

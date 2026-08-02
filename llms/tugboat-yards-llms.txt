@@ -1,0 +1,26 @@
+# Tugboat Yards
+
+> Tugboat Yards Inc. was a San Francisco startup (product name "Tugboat") that built tools for independent publishers and media creators to raise direct financial support from their audiences. It was backed by a16z and is now defunct: the product was live circa 2012-2014, the domain was parked by 2016, and tugboatyards.com publishes no A/AAAA records as of 2026-07-21. Its API (https://api.tugboatyards.com) is offline; the surface below is a historical record recovered from the provider's own 2015 documentation via the Wayback Machine.
+
+This profile is maintained by API Evangelist / APIs.io as part of the a16z venture-portfolio graph. There is no live API surface to integrate with.
+
+## Historical API surface (archived 2015)
+
+- [API reference (Wayback)](https://web.archive.org/web/20150207025009/https://tugboatyards.com/developer/api): Sphinx-built docs for the Tugboat Yards publisher API - key-check, pages, offers (+ issues), subscribers, orders, checkouts (deprecated), key-settings, placements, and Instant Payment Notification webhooks
+- [Authentication (Wayback)](https://web.archive.org/web/20150207051224/https://tugboatyards.com/developer/api/authentication.html): API-key auth via the X-Tugboat-Auth header (app_id%token), validated with GET /key-check
+- [pytugboat client docs (still live)](https://pytugboat.readthedocs.io/): First-party Python client, v0.1, copyright 2013 Tugboat Yards Inc.; never on PyPI, source repo deleted
+
+## Recovered artifacts in this repo
+
+- [APIs.json profile](https://raw.githubusercontent.com/api-evangelist/tugboat-yards/refs/heads/main/apis.yml): Machine-readable APIs.json (0.20) profile
+- [Authentication](https://raw.githubusercontent.com/api-evangelist/tugboat-yards/refs/heads/main/authentication/tugboat-yards-authentication.yml): Recovered auth profile
+- [Webhooks (IPN)](https://raw.githubusercontent.com/api-evangelist/tugboat-yards/refs/heads/main/asyncapi/tugboat-yards-webhooks.yml): Instant Payment Notification event surface
+- [Conventions](https://raw.githubusercontent.com/api-evangelist/tugboat-yards/refs/heads/main/conventions/tugboat-yards-conventions.yml): Endpoint, encoding, date, filtering, and error-envelope conventions
+- [Error catalog](https://raw.githubusercontent.com/api-evangelist/tugboat-yards/refs/heads/main/errors/tugboat-yards-problem-types.yml): JSON error envelope and documented errors
+- [Lifecycle](https://raw.githubusercontent.com/api-evangelist/tugboat-yards/refs/heads/main/lifecycle/tugboat-yards-lifecycle.yml): Defunct-company timeline and the deprecated checkouts interface
+- [Packages](https://raw.githubusercontent.com/api-evangelist/tugboat-yards/refs/heads/main/packages/tugboat-yards-packages.yml): pytugboat first-party Python client record
+- [Domain security probe](https://raw.githubusercontent.com/api-evangelist/tugboat-yards/refs/heads/main/security/tugboat-yards-domain-security.yml): DNS/TLS probe recording the dead domain
+
+## APIs
+
+- Tugboat Yards API (defunct): was https://api.tugboatyards.com - publisher-scoped REST API for audience-funding offers, subscribers, orders, and payment notifications. Offline; documentation survives only in the Wayback Machine.

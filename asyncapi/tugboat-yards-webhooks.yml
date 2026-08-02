@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: searched
+source: https://web.archive.org/web/20150524035220id_/https://tugboatyards.com/developer/api/sources/instant_payment_notifications.txt
+type: Webhooks
+x-status: historical
+note: Tugboat Yards is defunct and this event surface is offline. Recovered
+  verbatim from the provider's archived 2015 developer documentation. The
+  provider published no AsyncAPI document; this captures its documented
+  webhook (IPN) catalog.
+name: Tugboat Instant Payment Notifications (IPN)
+description: When a purchase was received, and for every subsequent change in
+  the purchase's status (e.g. captured to settled, or captured to canceled),
+  Tugboat made an HTTP POST request to the publisher's configured IPN URL.
+delivery:
+  transport: http-post
+  configuration: IPN URL set per API key via PUT /key-settings (ipn_url field),
+    null by default; also configurable per offer.
+events:
+- name: purchase-status-change
+  trigger: purchase received or purchase status changed
+  method: POST
+  payload_fields:
+  - page_id
+  - offer_id
+  - user_id
+  - order_id
+  - partner_key
+  example: page_id=123456&offer_id=987654&user_id=543210&order_id=567890&partner_key=(text_you_specify)
+  notes: IDs in the POST body were intended for follow-up API calls (e.g.
+    GET /offer/987654/subscriber/543210). partner_key was a caller-specified
+    correlation value appended to the purchase URL and echoed back in the IPN,
+    typically used to pair a buyer with a local user_id.

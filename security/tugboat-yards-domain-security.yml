@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: probed
+note: Tugboat Yards is defunct. The tugboatyards.com domain is still registered
+  (Hover nameservers and MX remain) but publishes no A/AAAA records, so neither
+  the website nor the former api.tugboatyards.com host is reachable. Absence of
+  records below is observed data, probed 2026-07-21 with dig and curl.
+hosts:
+- host: tugboatyards.com
+  https: false
+  reachable: false
+  error: DNS does not resolve (no A/AAAA record; curl "Could not resolve host")
+- host: www.tugboatyards.com
+  https: false
+  reachable: false
+  error: DNS does not resolve (curl "Could not resolve host")
+- host: api.tugboatyards.com
+  https: false
+  reachable: false
+  error: parent zone has no A/AAAA records; historical API host (archived 302
+    capture 2015-05-24 redirecting to tugboatyards.com/developer/api)
+domains:
+- domain: tugboatyards.com
+  registered: true
+  nameservers: [ns1.hover.com, ns2.hover.com]
+  a_record: false
+  aaaa_record: false
+  mx: [mx.hover.com.cust.hostedemail.com]
+  dnssec: false
+  caa: []
+  spf: false
+  txt: []
+  dmarc: false

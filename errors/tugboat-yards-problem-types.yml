@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: searched
+source: https://web.archive.org/web/20150207025009/https://tugboatyards.com/developer/api
+x-status: historical
+note: Tugboat Yards is defunct. Error semantics recovered from the provider's
+  archived 2015 developer documentation. The API predated RFC 9457 and used a
+  simple JSON error envelope; no HTTP status catalog was published.
+format: custom
+envelope:
+  field: error
+  shape: '{"error": "<message>"}'
+problems:
+- title: invalid app_id
+  example: '{"error": "invalid app_id"}'
+  source_operation: GET /key-check
+  remediation: Regenerate or correct the X-Tugboat-Auth key (format app_id%token).
+- title: No such page
+  example: '{"error": "No such page"}'
+  source_operation: GET /page/{page_id}
+  remediation: Verify the page_id belongs to the authenticated publisher.
+constraints:
+- GET /offer/{offer_id}/subscribers failed when the offer was not recurring
+- offer state could only be set to 'deleted' if the offer had never been
+  purchased; purchased offers could only be 'archived'
