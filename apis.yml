@@ -62,6 +62,11 @@ apis:
   - Publishing
   - Crowdfunding
   - Payments
+  - Webhook
+  tags_raw:
+  - Publishing
+  - Crowdfunding
+  - Payments
   - Webhooks
   properties:
   - name: Documentation (Wayback archive, 2015)
